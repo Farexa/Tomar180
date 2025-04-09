@@ -2,21 +2,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	[SerializeField] Transform foot;
-	
+	static int lives = 5;
+
 	void Start()
 	{
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
+		print("Lives when scene loaded: " + lives);
+		lives--;
+		print("Lives when player damaged: " + lives);
 	}
-	
-	// HI CAGD 180
 }
