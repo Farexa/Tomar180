@@ -6,16 +6,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Start()
 	{
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
-		print("Hello World!");
+
 	}
 	
 	// HI CAGD 180
