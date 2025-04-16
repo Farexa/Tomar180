@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-	public bool attacking => attackTimer >= 0;
+	public bool attacking => attackTimer > 0;
 	float attackTimer = 0;
 	float cooldownTimer = 0;
 
@@ -43,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
 		}
 
 		// Start an attack if permitted
-		if (Input.GetKeyDown(KeyCode.E) && cooldownTimer < 0 && !attacking)
+		if (Input.GetKeyDown(KeyCode.E) && cooldownTimer <= 0 && !attacking)
 		{
 			Attack();
 		}
