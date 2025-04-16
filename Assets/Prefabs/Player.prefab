@@ -98,10 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackLength: 1
   cooldownLength: 1.5
-  playerRenderer: {fileID: 0}
-  attackingMaterial: {fileID: 0}
-  cooldownMaterial: {fileID: 0}
-  neutralMaterial: {fileID: 0}
+  playerRenderer: {fileID: 6360784258044455280}
+  attackingMaterial: {fileID: 2100000, guid: e4c2ecd5606b59d4ea9d2dc943bd44a5, type: 2}
+  cooldownMaterial: {fileID: 2100000, guid: 329e398bee945478ca637b246f094d70, type: 2}
+  neutralMaterial: {fileID: 2100000, guid: ba38dd4fa7dc43c4fb7b58c5c9f43289, type: 2}
 --- !u!136 &3278873578007287507
 CapsuleCollider:
   m_ObjectHideFlags: 0
