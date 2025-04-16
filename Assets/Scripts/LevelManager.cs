@@ -4,7 +4,14 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 	[SerializeField] int mainMenuSceneIndex;
-	[SerializeField] int gameOverSceneIndex;
+	
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			LoadLevel(1);
+		}
+	}
 	
 	public void LoadLevel(int levelIndex)
 	{
@@ -14,10 +21,5 @@ public class LevelManager : MonoBehaviour
 	public void MainMenuScreen()
 	{
 		SceneManager.LoadScene(mainMenuSceneIndex);
-	}
-	
-	public void GameOverScreen()
-	{
-		SceneManager.LoadScene(gameOverSceneIndex);
 	}
 }
