@@ -9,8 +9,10 @@ public class PlayerController1 : MonoBehaviour
     public int speed = 7;
     public float jumpForce = 1;
     public int lives = 3;
+    public float killHeight = -5;
 
     public Vector3 respawnPoint;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,11 @@ public class PlayerController1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hit;
+
+        if (transform.position.y < killHeight)
+            LoseLife();
+
         Move();
         Jump();
     }
