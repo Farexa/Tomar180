@@ -14,21 +14,20 @@ public enum PatrolType
 	Horizontal, Longitudinal
 }
 
-public class Enemy : MonoBehaviour, IStompable
+public class Enemy : MonoBehaviour, IDamageable
 {
 	[SerializeField] PatrolType patrolType;
 	
-	public Vector3 startPoint;
 	[SerializeField] float patrolDistance;
 	[SerializeField] float wallDetectDistance;
 	[SerializeField] LayerMask environmentMask;
-	[SerializeField] float speed;
-	int dir = 1;
 	
-	public void OnStomp()
-	{
-		
-	}
+	[SerializeField] float speed;
+	[SerializeField] bool canBeStomped = true;
+	[SerializeField] bool canBeAttacked = true;
+	
+	public Vector3 startPoint;
+	int dir = 1;
 	
 	void Update()
 	{
@@ -43,6 +42,35 @@ public class Enemy : MonoBehaviour, IStompable
 		{
 			transform.Translate(0, 0, speed * dir * Time.deltaTime);
 		}
+	}
+	
+	public void OnStomp(PlayerController1 player)
+	{
+		if (canBeStomped)
+		{
+			Die();
+		}
+		else
+		{
+			player.LoseLife();
+		}
+	}
+	
+	public void OnAttack(PlayerController1 player)
+	{
+		if (canBeAttacked)
+		{
+			Die();
+		}
+		else
+		{
+			player.LoseLife();
+		}
+	}
+	
+	void Die()
+	{
+		Destroy(gameObject);
 	}
 	
 	void CheckForWall()
