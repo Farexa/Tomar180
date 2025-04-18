@@ -9,7 +9,9 @@ public class PlayerController1 : MonoBehaviour
     public int speed = 7;
     public float jumpForce = 1;
     public int lives = 3;
+    public int fruits = 0; 
     public float killHeight = -5;
+    public int wumpaFruit = 0;
 
     public Vector3 respawnPoint;
     
