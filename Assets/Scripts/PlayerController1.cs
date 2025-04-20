@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -36,6 +38,8 @@ public class PlayerController1 : MonoBehaviour
 
         Move();
         Jump();
+
+        AddLife();
     }
 
     private void Move()
@@ -88,6 +92,23 @@ public class PlayerController1 : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
+
+    
+     private bool lifeAdded = false; // A flag to track if a life has been added
+
+    public void AddLife()
+    {
+        if (fruits == 100 && !lifeAdded) // Check if fruits equal 100 and a life hasn't been added
+        {
+            lives++;       
+            lifeAdded = true; 
+        }
+        else if (fruits != 100) // Reset the flag if fruits no longer equal 100
+        {
+            lifeAdded = false;
+        }
+    }
+
 
     private bool OnGround()
     {
