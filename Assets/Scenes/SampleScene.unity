@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 824889057}
   - component: {fileID: 824889056}
   m_Layer: 5
-  m_Name: livesText (1)
+  m_Name: wumpaFruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,6 +730,7 @@ GameObject:
   - component: {fileID: 1512883502}
   - component: {fileID: 1512883501}
   - component: {fileID: 1512883500}
+  - component: {fileID: 1512883504}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -821,6 +822,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1512883504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512883499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2883940d74ace9549ad79aa8337dbecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesText: {fileID: 1175857076}
+  wumpaFruitText: {fileID: 824889056}
+  playerController1: {fileID: 1883677744}
 --- !u!1 &1696189816
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +905,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883677744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9187024607246262342, guid: 1ce0c16dab31a50429f1bb9be63bc24d, type: 3}
+  m_PrefabInstance: {fileID: 8727950887239119812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210fbf9613bbe0546a14d45201f164f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8693932294701687651
 PrefabInstance:
   m_ObjectHideFlags: 0

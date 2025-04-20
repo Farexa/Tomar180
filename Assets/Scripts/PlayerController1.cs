@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController1 : MonoBehaviour
 {
@@ -81,6 +82,10 @@ public class PlayerController1 : MonoBehaviour
         {
             //Respawn - sets the player's position to the pos of the respawn point
             transform.position = respawnPoint;
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
         }
     }
 

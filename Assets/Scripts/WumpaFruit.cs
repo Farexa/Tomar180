@@ -18,7 +18,7 @@ public class WumpaFruit : MonoBehaviour
         if (other.GetComponent<PlayerController1>())
         {
             //Add coin to player
-            other.GetComponent<PlayerController1>().wumpaFruit++;
+            other.GetComponent<PlayerController1>().fruits++;
 
             //Remove the coin
             Destroy(gameObject);
