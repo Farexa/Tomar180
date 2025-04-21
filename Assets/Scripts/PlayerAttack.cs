@@ -8,12 +8,19 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+	[SerializeField] PlayerController plr;
+	[SerializeField] Rigidbody rb;
+	[SerializeField] Transform foot;
+	
 	public bool attacking => attackTimer > 0;
 	float attackTimer = 0;
 	float cooldownTimer = 0;
 
 	[SerializeField] float attackLength = 1;
 	[SerializeField] float cooldownLength = 1.5f;
+
+	[SerializeField] float enemyBelowDistance;
+	[SerializeField] LayerMask enemyMask;
 
 	[SerializeField] Renderer playerRenderer;
 	[SerializeField] Material attackingMaterial;
@@ -47,6 +54,29 @@ public class PlayerAttack : MonoBehaviour
 		{
 			Attack();
 		}
+	
+		if (rb.velocity.y < 0)
+		{
+			if (EnemyBelow(out Enemy foundEnemy))
+			{
+				foundEnemy.OnStomp(plr);
+			}
+		}	
+	}
+	
+	bool EnemyBelow(out Enemy foundEnemy)
+	{
+		if (Physics.Raycast(foot.position, Vector3.down, out RaycastHit hit, enemyBelowDistance, enemyMask))
+		{
+			if (hit.transform.TryGetComponent(out Enemy enemy))
+			{
+				foundEnemy = enemy;
+				return true;	
+			}
+		}
+
+		foundEnemy = null;
+		return false;
 	}
 	
 	void Attack()

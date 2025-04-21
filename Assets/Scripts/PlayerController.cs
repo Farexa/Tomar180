@@ -122,4 +122,9 @@ public class PlayerController : MonoBehaviour
 
 		return onGround;
 	}
+
+	public void Bounce()
+	{
+		rb.velocity = new Vector3(rb.velocity.x, jumpForce * 0.666f, rb.velocity.z);
+	}
 }

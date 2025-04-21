@@ -1,4 +1,3 @@
-using System;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,12 +15,15 @@ public enum PatrolType
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+	[Header("Patrolling")]
 	[SerializeField] PatrolType patrolType;
-	
 	[SerializeField] float patrolDistance;
+	
+	[Header("Movement")]
 	[SerializeField] float wallDetectDistance;
 	[SerializeField] LayerMask environmentMask;
 	
+	[Header("Settings")]
 	[SerializeField] float speed;
 	[SerializeField] bool canBeStomped = true;
 	[SerializeField] bool canBeAttacked = true;
@@ -49,6 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
 		if (canBeStomped)
 		{
 			Die();
+			player.Bounce();
 		}
 		else
 		{
@@ -108,6 +111,14 @@ public class Enemy : MonoBehaviour, IDamageable
 			{
 				dir = -1;
 			}
+		}
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.TryGetComponent(out PlayerController player))
+		{
+			player.LoseLife();
 		}
 	}
 }

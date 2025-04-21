@@ -99,8 +99,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7575771b3d244d69b6c702f211fd2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plr: {fileID: 9187024607246262342}
+  rb: {fileID: 4428778064404917091}
+  foot: {fileID: 4802045935751954325}
   attackLength: 1
   cooldownLength: 1.5
+  enemyBelowDistance: 0.2
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
   playerRenderer: {fileID: 6360784258044455280}
   attackingMaterial: {fileID: 2100000, guid: e4c2ecd5606b59d4ea9d2dc943bd44a5, type: 2}
   cooldownMaterial: {fileID: 2100000, guid: 329e398bee945478ca637b246f094d70, type: 2}
