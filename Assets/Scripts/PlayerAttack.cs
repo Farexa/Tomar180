@@ -52,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
 		// Start an attack if permitted
 		if (Input.GetKeyDown(KeyCode.E) && cooldownTimer <= 0 && !attacking)
 		{
-			Attack();
+			StartAttack();
 		}
 	
 		if (rb.velocity.y < 0)
@@ -79,7 +79,7 @@ public class PlayerAttack : MonoBehaviour
 		return false;
 	}
 	
-	void Attack()
+	void StartAttack()
 	{
 		attackTimer = attackLength;
 		playerRenderer.material = attackingMaterial;
@@ -89,5 +89,16 @@ public class PlayerAttack : MonoBehaviour
 	{
 		cooldownTimer = cooldownLength;
 		playerRenderer.material = cooldownMaterial;
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.TryGetComponent(out Enemy enemy))
+		{
+			if (attacking)
+			{
+				enemy.OnAttack(plr);
+			}
+		}
 	}
 }
