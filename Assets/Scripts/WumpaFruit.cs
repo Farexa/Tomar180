@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WumpaFruit : MonoBehaviour
@@ -18,7 +16,7 @@ public class WumpaFruit : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             //Add coin to player
-            other.GetComponent<PlayerController>().fruits++;
+            PlayerController.wumpaFruit++;
 
             //Remove the coin
             Destroy(gameObject);

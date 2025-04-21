@@ -57,25 +57,25 @@ public class PlayerAttack : MonoBehaviour
 	
 		if (rb.velocity.y < 0)
 		{
-			if (EnemyBelow(out Enemy foundEnemy))
+			if (DamageableBelow(out IDamageable foundDamagable))
 			{
-				foundEnemy.OnStomp(plr);
+				foundDamagable.OnStomp(plr);
 			}
 		}	
 	}
 	
-	bool EnemyBelow(out Enemy foundEnemy)
+	bool DamageableBelow(out IDamageable foundDamageable)
 	{
 		if (Physics.Raycast(foot.position, Vector3.down, out RaycastHit hit, enemyBelowDistance, enemyMask))
 		{
-			if (hit.transform.TryGetComponent(out Enemy enemy))
+			if (hit.transform.TryGetComponent(out IDamageable enemy))
 			{
-				foundEnemy = enemy;
+				foundDamageable = enemy;
 				return true;	
 			}
 		}
 
-		foundEnemy = null;
+		foundDamageable = null;
 		return false;
 	}
 	
@@ -93,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.TryGetComponent(out Enemy enemy))
+		if (other.TryGetComponent(out IDamageable enemy))
 		{
 			if (attacking)
 			{

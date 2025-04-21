@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
 	public int speed = 7;
 	public float jumpForce = 1;
 	public int lives = 3;
-	public int fruits = 0;
 	public float killHeight = -5;
 	public static int wumpaFruit = 0;
 
@@ -39,8 +38,6 @@ public class PlayerController : MonoBehaviour
 
 		Move();
 		Jump();
-
-		AddLife();
 	}
 
 	private void Move()
@@ -102,6 +99,7 @@ public class PlayerController : MonoBehaviour
 
 	public void AddFruit(int amount)
 	{
+		print(amount);
 		wumpaFruit += amount;
 		fruitsEarnedThisLevel += amount;
 		

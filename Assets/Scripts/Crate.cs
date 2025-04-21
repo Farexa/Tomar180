@@ -7,6 +7,7 @@ public class Crate : MonoBehaviour, IDamageable
 	public void OnStomp(PlayerController plr)
 	{
 		Break(plr);
+		plr.Bounce();
 	}
 	
 	public void OnAttack(PlayerController plr)
@@ -17,5 +18,6 @@ public class Crate : MonoBehaviour, IDamageable
 	void Break(PlayerController player)
 	{
 		player.AddFruit((int)storedWumpaFruit);
+		Destroy(gameObject);
 	}
 }
