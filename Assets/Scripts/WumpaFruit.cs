@@ -15,10 +15,10 @@ public class WumpaFruit : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Check if touched object was the player
-        if (other.GetComponent<PlayerController1>())
+        if (other.GetComponent<PlayerController>())
         {
             //Add coin to player
-            other.GetComponent<PlayerController1>().fruits++;
+            other.GetComponent<PlayerController>().fruits++;
 
             //Remove the coin
             Destroy(gameObject);

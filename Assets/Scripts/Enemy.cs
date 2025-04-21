@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour, IDamageable
 		}
 	}
 	
-	public void OnStomp(PlayerController1 player)
+	public void OnStomp(PlayerController player)
 	{
 		if (canBeStomped)
 		{
@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour, IDamageable
 		}
 	}
 	
-	public void OnAttack(PlayerController1 player)
+	public void OnAttack(PlayerController player)
 	{
 		if (canBeAttacked)
 		{

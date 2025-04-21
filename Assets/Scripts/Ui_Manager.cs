@@ -9,7 +9,7 @@ public class Ui_Manager : MonoBehaviour
     public TMP_Text livesText;
     public TMP_Text wumpaFruitText; 
 
-    public PlayerController1 playerController1;
+    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +19,8 @@ public class Ui_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        livesText.text = "Lives: " + playerController1.lives;
+        livesText.text = "Lives: " + playerController.lives;
 
-        wumpaFruitText.text = "Fruits: " + playerController1.fruits;
+        wumpaFruitText.text = "Fruits: " + playerController.fruits;
     }
 }
