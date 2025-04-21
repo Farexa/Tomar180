@@ -4,7 +4,7 @@ using UnityEngine;
 /*
  * Author: Ty Barnea Chotam
  * Last Modified: 4/17/2025
- * Description: Controls the movement and patrolling of enemies.
+ * Description: Controls the movement and interactions of enemies.
 */
 
 
