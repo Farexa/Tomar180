@@ -54,9 +54,10 @@ public class PlayerAttack : MonoBehaviour
 		{
 			StartAttack();
 		}
-	
-		if (rb.velocity.y < 0)
+
+		if (rb.velocity.y < 0.02f)
 		{
+			print("test");
 			if (DamageableBelow(out IDamageable foundDamagable))
 			{
 				foundDamagable.OnStomp(plr);
@@ -66,7 +67,9 @@ public class PlayerAttack : MonoBehaviour
 	
 	bool DamageableBelow(out IDamageable foundDamageable)
 	{
-		if (Physics.Raycast(foot.position, Vector3.down, out RaycastHit hit, enemyBelowDistance, enemyMask))
+		float extra = 0.1f;
+		Vector3 start = foot.position + (Vector3.up * extra);
+		if (Physics.Raycast(start, Vector3.down, out RaycastHit hit, enemyBelowDistance + extra, enemyMask))
 		{
 			if (hit.transform.TryGetComponent(out IDamageable enemy))
 			{
