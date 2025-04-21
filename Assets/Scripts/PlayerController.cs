@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
 	public int lives = 3;
 	public int fruits = 0;
 	public float killHeight = -5;
-	public int wumpaFruit = 0;
+	public static int wumpaFruit = 0;
 
+	int fruitsEarnedThisLevel = 0;
 	bool earnedExtraLife = false;
 
 	public Vector3 respawnPoint;
@@ -102,8 +103,9 @@ public class PlayerController : MonoBehaviour
 	public void AddFruit(int amount)
 	{
 		wumpaFruit += amount;
+		fruitsEarnedThisLevel += amount;
 		
-		if (wumpaFruit > 100 && !earnedExtraLife)
+		if (fruitsEarnedThisLevel > 100 && !earnedExtraLife)
 		{
 			AddLife();
 			earnedExtraLife = true;
