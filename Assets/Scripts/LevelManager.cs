@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-	[SerializeField] int mainMenuSceneIndex;
+	const int mainMenuSceneIndex = 0;
 	
 	void Update()
 	{
@@ -13,12 +13,12 @@ public class LevelManager : MonoBehaviour
 		}
 	}
 	
-	public void LoadLevel(int levelIndex)
+	public static void LoadLevel(int levelIndex)
 	{
 		SceneManager.LoadScene(levelIndex);
 	}
 	
-	public void MainMenuScreen()
+	public static void MainMenuScreen()
 	{
 		SceneManager.LoadScene(mainMenuSceneIndex);
 	}
