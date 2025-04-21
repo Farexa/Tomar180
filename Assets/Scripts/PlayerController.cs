@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 	public float killHeight = -5;
 	public int wumpaFruit = 0;
 
+	bool earnedExtraLife = false;
+
 	public Vector3 respawnPoint;
 
 	// Start is called before the first frame update
@@ -92,21 +94,21 @@ public class PlayerController : MonoBehaviour
 	}
 
 
-	private bool lifeAdded = false; // A flag to track if a life has been added
-
 	public void AddLife()
 	{
-		if (fruits == 100 && !lifeAdded) // Check if fruits equal 100 and a life hasn't been added
-		{
-			lives++;
-			lifeAdded = true;
-		}
-		else if (fruits != 100) // Reset the flag if fruits no longer equal 100
-		{
-			lifeAdded = false;
-		}
+		lives++;
 	}
 
+	public void AddFruit(int amount)
+	{
+		wumpaFruit += amount;
+		
+		if (wumpaFruit > 100 && !earnedExtraLife)
+		{
+			AddLife();
+			earnedExtraLife = true;
+		}
+	}
 
 	private bool OnGround()
 	{
