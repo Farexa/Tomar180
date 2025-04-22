@@ -31,6 +31,11 @@ public class Enemy : MonoBehaviour, IDamageable
 	public Vector3 startPoint;
 	int dir = 1;
 	
+	void Start()
+	{
+		SetStartPosition();
+	}
+	
 	void Update()
 	{
 		CheckForWall();
@@ -80,10 +85,15 @@ public class Enemy : MonoBehaviour, IDamageable
 	{
 		Vector3 direction = patrolType == PatrolType.Horizontal ? Vector3.right : Vector3.forward;
 		
-		if (Physics.Raycast(transform.position, direction * dir, wallDetectDistance, environmentMask))
+		if (Physics.Raycast(transform.position + (Vector3.up * 0.5f), direction * dir, wallDetectDistance, environmentMask))
 		{
 			dir *= -1;
 		}
+	}
+	
+	public void SetStartPosition()
+	{
+		startPoint = transform.position;
 	}
 	
 	void CheckDirection()
@@ -119,21 +129,6 @@ public class Enemy : MonoBehaviour, IDamageable
 		if (other.TryGetComponent(out PlayerController player))
 		{
 			player.LoseLife();
-		}
-	}
-}
-
-[CustomEditor(typeof(Enemy))]
-public class EnemyEditor : Editor
-{
-	public override void OnInspectorGUI()
-	{
-		DrawDefaultInspector();
-		
-		if (GUILayout.Button("Set Start Position"))
-		{
-			var enemy = (Enemy)target;
-			enemy.startPoint = enemy.transform.position;
 		}
 	}
 }
