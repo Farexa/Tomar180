@@ -6,15 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/EndScreen.unity
-    guid: 27630049540a9f140a4366a7b3266565
+    path: Assets/Scenes/MainMenu.unity
+    guid: 45b7e5c4c504949b889ad6f16cf86929
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: e124a74d881f2491db936ec426171700
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 405ff5ae909004f7988778baced35f55
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: ea8fdcf65e9974c4492e8d3041a9476e
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: a8f23de17af7a144b88752f97fcf104d
+  - enabled: 1
+    path: Assets/Scenes/SecretRoom.unity
+    guid: bf4f1b0d84529a84192e54196b46dcc6
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 0e93e73ef9b0e404bab9b06aaeec8174
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 27630049540a9f140a4366a7b3266565
   m_configObjects: {}
