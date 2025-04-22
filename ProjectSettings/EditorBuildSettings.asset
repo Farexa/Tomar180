@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SecretRoom.unity
     guid: bf4f1b0d84529a84192e54196b46dcc6
   - enabled: 1
-    path: Assets/Scenes/EndScreen.unity
+    path: Assets/Scenes/LoseScreen.unity
     guid: 0e93e73ef9b0e404bab9b06aaeec8174
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity

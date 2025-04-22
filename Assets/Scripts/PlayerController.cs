@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			LevelManager.LoadLevel(1);
+			LevelManager.LoadLevel(6);
 		}
 	}
 

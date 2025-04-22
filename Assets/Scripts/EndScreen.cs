@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
-    public void PlayButtonPressed(int buildIndex)
+    public void PlayButtonPressed(int sceneIndex)
     {
-        SceneManager.LoadScene(buildIndex);
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void QuitButtonPressed()

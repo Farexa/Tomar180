@@ -99,11 +99,22 @@ public class PlayerAttack : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.TryGetComponent(out IDamageable enemy))
+		if (other.TryGetComponent(out IDamageable damagable))
 		{
 			if (attacking)
 			{
-				enemy.OnAttack(plr);
+				damagable.OnAttack(plr);
+			}
+		}
+	}
+	
+	void OnTriggerStay(Collider other)
+	{
+		if (other.TryGetComponent(out IDamageable damagable))
+		{
+			if (attacking)
+			{
+				damagable.OnAttack(plr);
 			}
 		}
 	}
