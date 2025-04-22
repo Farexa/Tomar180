@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aacd64da8200b34449708fcf3384ba53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTarget: {fileID: 0}
-  lerpSpeed: 15.9
+  moveLerpSpeed: 10
+  rotateLerpSpeed: 10
 --- !u!20 &72109631129148186
 Camera:
   m_ObjectHideFlags: 0

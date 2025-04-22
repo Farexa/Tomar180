@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4428778064404917091}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,9 +84,7 @@ MonoBehaviour:
   speed: 7
   jumpForce: 6
   lives: 3
-  fruits: 0
   killHeight: -5
-  wumpaFruit: 0
   respawnPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &4012262138387540445
 MonoBehaviour:
@@ -113,6 +111,7 @@ MonoBehaviour:
   attackingMaterial: {fileID: 2100000, guid: e4c2ecd5606b59d4ea9d2dc943bd44a5, type: 2}
   cooldownMaterial: {fileID: 2100000, guid: 329e398bee945478ca637b246f094d70, type: 2}
   neutralMaterial: {fileID: 2100000, guid: ba38dd4fa7dc43c4fb7b58c5c9f43289, type: 2}
+  bounceParticles: {fileID: 5536827246133940131, guid: 8e63d05a826044fb995d5104ba72b325, type: 3}
 --- !u!136 &3278873578007287507
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -8,13 +8,29 @@ using UnityEngine;
 
 public class SmoothCamera : MonoBehaviour
 {
-	[SerializeField] Transform camTarget;
-	[SerializeField][Range(0f, 100f)] float lerpSpeed;
+	Transform camTarget;
+	Transform lookAt;
+	[SerializeField][Range(0f, 100f)] float moveLerpSpeed;
+	[SerializeField][Range(0f, 100f)] float rotateLerpSpeed;
 
-	// Use fixed update to prevent jittering.
-	void FixedUpdate()
+	void Start()
+	{
+		Transform plr = GameObject.FindWithTag("Player").transform;
+		camTarget = plr.GetChild(0);
+		lookAt = plr.GetChild(1);
+	}
+
+	// Use both updates to prevent jittering.
+	void Update() { UpdateCam(); }
+	void FixedUpdate() { UpdateCam(); }
+	
+	void UpdateCam()
 	{
 		Vector3 targetPos = new Vector3(0, camTarget.position.y, camTarget.position.z);
-		transform.position = Vector3.Lerp(transform.position, targetPos, lerpSpeed * Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, targetPos, moveLerpSpeed * Time.fixedDeltaTime);
+		transform.rotation = Quaternion.Slerp(
+			transform.rotation,
+			Quaternion.LookRotation(lookAt.position - transform.position, Vector3.up),
+			rotateLerpSpeed * Time.fixedDeltaTime);
 	}
 }

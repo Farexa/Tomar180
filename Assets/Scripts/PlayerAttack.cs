@@ -27,6 +27,8 @@ public class PlayerAttack : MonoBehaviour
 	[SerializeField] Material cooldownMaterial;
 	[SerializeField] Material neutralMaterial;
 
+	[SerializeField] GameObject bounceParticles;
+
 	void Update()
 	{
 		// Manage attack timer behavior
@@ -57,10 +59,11 @@ public class PlayerAttack : MonoBehaviour
 
 		if (rb.velocity.y < 0.02f)
 		{
-			print("test");
 			if (DamageableBelow(out IDamageable foundDamagable))
 			{
 				foundDamagable.OnStomp(plr);
+				var newParticle = Instantiate(bounceParticles);
+				newParticle.transform.position = foot.position;
 			}
 		}	
 	}

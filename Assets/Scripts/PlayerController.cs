@@ -99,9 +99,10 @@ public class PlayerController : MonoBehaviour
 
 	public void AddFruit(int amount)
 	{
-		print(amount);
 		wumpaFruit += amount;
 		fruitsEarnedThisLevel += amount;
+
+		Ui_Manager.Instance.DisplayFruit(amount);
 		
 		if (fruitsEarnedThisLevel > 100 && !earnedExtraLife)
 		{

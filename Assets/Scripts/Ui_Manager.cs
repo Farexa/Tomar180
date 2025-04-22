@@ -1,21 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Ui_Manager : MonoBehaviour
 {
-    public TMP_Text livesText;
-    public TMP_Text wumpaFruitText; 
+	public static Ui_Manager Instance;
 
-    public PlayerController playerController;
+	PlayerController playerController;
 
-    // Update is called once per frame
-    void Update()
-    {
-        livesText.text = "Lives: " + playerController.lives;
+	public TMP_Text livesText;
+	public TMP_Text wumpaFruitText;
 
-        wumpaFruitText.text = "Fruits: " + PlayerController.wumpaFruit;
-    }
+	[SerializeField] GameObject uiFruitPrefab;
+
+	void Awake()
+	{
+		Instance = this;
+	}
+	
+	void Start()
+	{
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		livesText.text = "Lives: " + playerController.lives;
+	}
+
+	public void DisplayFruit(int amount)
+	{
+		for (int i = 0; i < amount; i++)
+		{
+			Vector2 screenPos = new Vector2(Random.Range(0.15f, 0.85f), Random.Range(0.15f, 0.85f));
+
+			RectTransform newFruit = Instantiate(uiFruitPrefab, transform).GetComponent<RectTransform>();
+			newFruit.GetComponent<UIFruit>().Initialize(screenPos);
+		}
+	}
 }
