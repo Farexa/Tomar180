@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolType: 0
-  patrolDistance: 5
+  patrolDistance: 30
   wallDetectDistance: 0.5
   environmentMask:
     serializedVersion: 2
