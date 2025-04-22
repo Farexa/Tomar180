@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: Omar Samu
+ * Last Modified: 4/21/2025
+ * Description: Handles damage towards player.
+*/
 public class Hazard : MonoBehaviour
 {
    

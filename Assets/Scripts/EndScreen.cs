@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Author: Omar Samu
+ * Last Modified: 4/21/2025
+ * Description: Handles endscreen when game is over.
+*/
+
 public class EndScreen : MonoBehaviour
 {
 	 public void PlayButtonPressed(int sceneIndex)

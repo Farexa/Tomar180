@@ -1,6 +1,12 @@
 using TMPro;
 using UnityEngine;
 
+/*
+ * Author: Omar Samu
+ * Last Modified: 4/21/2025
+ * Description: Handles TextMesh and manages the UI. 
+*/
+
 public class Ui_Manager : MonoBehaviour
 {
 	public static Ui_Manager Instance;

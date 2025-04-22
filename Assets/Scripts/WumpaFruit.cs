@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/*
+ * Author: Omar Samu
+ * Last Modified: 4/21/2025
+ * Description: Handles wumpaFruit that will be taken from the player like coins. 
+*/
 public class WumpaFruit : MonoBehaviour
 {
     public float rotSpeed = 1;
