@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 	public int speed = 7;
 	public float jumpForce = 1;
 	public int lives = 3;
-	public float killHeight = -5;
+	public float killHeight = -10;
 	public static int wumpaFruit = 0;
 
 	static bool earnedExtraLife = false;
