@@ -52,7 +52,7 @@ MonoBehaviour:
   environmentMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  speed: 3
+  speed: 6
   canBeStomped: 1
   canBeAttacked: 1
   startPoint: {x: 0, y: 0, z: 7}
