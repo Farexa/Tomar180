@@ -26,6 +26,8 @@ public class Ui_Manager : MonoBehaviour
 	void Update()
 	{
 		livesText.text = "Lives: " + playerController.lives;
+		
+		wumpaFruitText.text = "Fruit: " + PlayerController.wumpaFruit;
 	}
 
 	public void DisplayFruit(int amount)
