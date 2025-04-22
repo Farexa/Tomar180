@@ -5,7 +5,7 @@ public class UIFruit : MonoBehaviour
 	RectTransform rt;
 	Vector2 startPos;
 	
-	Vector2 endPos = new Vector2(0, 1);
+	Vector2 endPos = new Vector2(1, 1);
 
 	float lifePercent = 0;
 	float lifeTime = 1;
